@@ -26,10 +26,13 @@ const compute = (dataStr) => {
 }
 
 fs.readFile('./input.txt', (err, data) => {
+	console.time('total');
+
   if (err) {
   	console.log(err);
   	return;
   }
 
   console.log(compute(data.toString().trim()));
+  console.timeEnd('total');
 });
